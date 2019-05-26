@@ -1,0 +1,24 @@
+.tools{
+    border-radius:15px;
+    background-color: red;
+    color:yellow;
+}
+button{
+    border-radius:10px;
+    color:black;
+    background-color:blue;
+    font-size: 18px;
+}
+.legend{
+    display:inline-block;
+    background-color:gray; 
+}
+body{
+    color:goldenrod;
+    background-color:black;
+}
+.vern{
+    color:red;
+    background-color:yellow;
+    border-radius:15px;
+}

@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<meta charset="utf8">
-	<style>
-        #legend {position: absolute;top: 0;right: 0;width: 800px;} .legend-color {width: 30px;height: 30px;} td {border: 1px solid black; font-size: 14px; padding-left: 5px;}
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf8">
+    <style>
+        #legend {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 800px;
+        }
+
+        .legend-color {
+            width: 30px;
+            height: 30px;
+        }
+
+        td {
+            border: 1px solid black;
+            font-size: 14px;
+            padding-left: 5px;
+        }
     </style>
 </head>
+
 <body>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
-	<script src="class.js"></script>
-	<script src="script.js"></script>
-	<table id="legend">
+    <div class="vern">
+        <h1>Game Of Life</h1>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+<div class = "axyusak">   
+    <table class="legend">
         <tr>
             <td class="legend-color">Գույն</td>
             <td>Անվանում</td>
@@ -49,7 +71,8 @@
             <td class="legend-color" style="background-color:red"></td>
             <td>Գիշատիչ</td>
             <td>Մոտակա 8 վանդակներում, էներգիան քչանում է 1-ով</td>
-            <td>Խոտակերներին, մարդուն և խոտին մոտակա 8 վանդակներում, շարժվելիս էներգիան ավելանում է 5ով,մարդուց ` 4-ով, խոտից ` 1-ով</td>
+            <td>Խոտակերներին, մարդուն և խոտին մոտակա 8 վանդակներում, շարժվելիս էներգիան ավելանում է 5ով,մարդուց ` 4-ով,
+                խոտից ` 1-ով</td>
             <td>Բազմանում է մոտակա տարածքներում, երբ էներգիան 15-ից ավել է</td>
             <td>Սատկում է, երբ էներգիան փոքր է 0֊-ից</td>
         </tr>
@@ -57,7 +80,8 @@
             <td class="legend-color" style="background-color:#f9d252"></td>
             <td>Մարդ</td>
             <td>Մոտակա 24 վանդակներում, էներգիան քչանում է 2-ով</td>
-            <td>Խոտակերներին և խոտերին՝ մոտակա 24 վանդակներում, շարժվելիս Խոտակերներից էներգիան ավելանում է 7-ով, խոտից՝ 2-ով</td>
+            <td>Խոտակերներին և խոտերին՝ մոտակա 24 վանդակներում, շարժվելիս Խոտակերներից էներգիան ավելանում է 7-ով, խոտից՝
+                2-ով</td>
             <td>Բազմանում է մոտակա տարածքներում, երբ էներգիան 30-ից ավել է</td>
             <td>Սատկում է, երբ էներգիան փոքր է 0-ից</td>
         </tr>
@@ -65,7 +89,8 @@
             <td class="legend-color" style="background-color:#6a0ad1"></td>
             <td>Վիշապ</td>
             <td>Մոտակա 49 վանդակներում, էներգիան քչանում է 6-ով</td>
-            <td>Խոտակերներին, խոտին, գիշատիչներին և մարդկանց՝ մոտակա 49 վանդակներում, շարժվելիս Խոտակերներից էներգիան ավելանում է 5-ով, խոտից՝ 1-ով, գիշատիչից՝ 6-ով, մարդուց ՝ 4-ով</td>
+            <td>Խոտակերներին, խոտին, գիշատիչներին և մարդկանց՝ մոտակա 49 վանդակներում, շարժվելիս Խոտակերներից էներգիան
+                ավելանում է 5-ով, խոտից՝ 1-ով, գիշատիչից՝ 6-ով, մարդուց ՝ 4-ով</td>
             <td>Բազմանում է մոտակա տարածքներում, երբ էներգիան 40-ից ավել է</td>
             <td>Սատկում է, երբ էներգիան փոքր է 0֊ից</td>
         </tr>
@@ -78,5 +103,19 @@
             <td>Սատկում է, երբ էներգիան փոքր է 0֊ից</td>
         </tr>
     </table>
+</div>
+<div class = "tools">
+    <ul>
+        <li>
+            <button onclick="fire()">All in FIRE</button>
+        </li>
+        <li>
+            <button onclick="pushGrasses()">Flowers</button>
+        </li>
+    </ul>
+</div>
+<div class="vern">
+    <h2 id="weather">Weather:</h2>
+</div>    
 </body>
 </html>
